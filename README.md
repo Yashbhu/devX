@@ -1,51 +1,146 @@
-# Welcome to your Expo app 👋
+🤖 AI GitHub Explorer & Contributor Assistant (work in progress/pending)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An open-source React Native app that helps developers explore GitHub repos, get AI-generated summaries, step-by-step build instructions, and contribution suggestions.
+Users can also post their own projects and chat with contributors to collaborate more easily.
 
-## Get started
+✨ Features
 
-1. Install dependencies
+🔑 GitHub OAuth (via Clerk) – log in with your GitHub account.
 
-   ```bash
-   npm install
-   ```
+📂 Browse & Search Repos – starred, trending, or by username.
 
-2. Start the app
+🏷️ Categorize Projects – AI or GitHub topics (Frontend, Backend, ML, etc.).
 
-   ```bash
-   npx expo start
-   ```
+📜 AI-Powered Repo Insights
 
-In the output, you'll find options to open the app in a
+Project summary
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Step-by-step “How to build” guide
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Suggested contribution tasks (beginner-friendly included)
 
-## Get a fresh project
+Maintainer DM/issue templates
 
-When you're ready, run:
+👥 Contributor Insights – see top contributors & activity.
 
-```bash
-npm run reset-project
-```
+💬 Contextual Chat – ask AI questions about a repo.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📌 Save & Track Repos – keep a list of repos you want to contribute to.
 
-## Learn more
+🚀 Community Projects – post your own project and invite contributors.
 
-To learn more about developing your project with Expo, look at the following resources:
+🛠️ Tech Stack
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Frontend:
 
-## Join the community
+React Native (Expo) + TypeScript
 
-Join our community of developers creating universal apps.
+NativeWind (Tailwind for RN)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# REPOOH-REEAAHDER
+React Navigation
+
+Backend:
+
+Node.js + Express (API proxy & AI calls)
+
+Clerk (GitHub OAuth)
+
+GitHub REST/GraphQL API
+
+OpenAI/Gemini API (LLM integration)
+
+Storage:
+
+AsyncStorage / SQLite (local)
+
+Supabase/Postgres (optional cloud sync)
+
+📂 Project Structure
+src/
+  components/       # Reusable UI components
+  screens/          # App screens (Login, RepoList, RepoDetail, Chat, Saved)
+  services/         # API integrations (github.ts, ai.ts)
+  context/          # Auth + Repo context providers
+server/
+  index.ts          # Express server
+  routes/           # API routes (github, ai)
+  utils/            # Helpers (auth, prompt builders)
+
+🚀 Getting Started
+1️⃣ Clone the repo
+git clone https://github.com/your-username/ai-github-explorer.git
+cd ai-github-explorer
+
+2️⃣ Install dependencies
+# frontend
+cd app
+npm install
+# or yarn install
+
+# backend
+cd server
+npm install
+
+3️⃣ Setup environment variables
+
+Create .env in server/
+
+GITHUB_CLIENT_ID=your_github_oauth_client_id
+GITHUB_CLIENT_SECRET=your_github_oauth_secret
+OPENAI_API_KEY=your_openai_key
+SESSION_SECRET=supersecret
+
+4️⃣ Run the app
+# Start backend
+cd server
+npm run dev
+
+# Start frontend
+cd app
+npx expo start
+
+🧠 AI Prompt Examples
+
+Repo Summary → “Summarize the repo in 3 lines, list its stack, and complexity level.”
+
+Build Guide → “Generate step-by-step setup instructions for this repo.”
+
+Contribution Suggestions → “Suggest beginner-friendly tasks based on issues & README.”
+
+DM Template → “Draft a polite message to the maintainer about contributing.”
+
+📌 Roadmap
+
+ GitHub OAuth login
+
+ Fetch & display repos
+
+ Repo detail page (README, issues, contributors)
+
+ AI-generated summaries & build guides
+
+ AI-based contribution task suggestions
+
+ Repo-contextual chat with AI
+
+ Project posting & community discussions
+
+ Push notifications for saved repos
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repo
+
+Create a feature branch (git checkout -b feature/awesome-feature)
+
+Commit changes (git commit -m "Add awesome feature")
+
+Push branch (git push origin feature/awesome-feature)
+
+Open a Pull Request
+
+📄 License
+
+This project is licensed under the MIT License – feel free to use, modify, and share.
